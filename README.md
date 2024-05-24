@@ -22,7 +22,8 @@ TailwindCSS
 
 ## Code
 
-You can find the entire code in src/routes/+page.svelte
+You can find the entire code in `src/routes/+page.svelte`
+
 I have added some major comments to help identify the exact functionality.
 
 ## References Used
