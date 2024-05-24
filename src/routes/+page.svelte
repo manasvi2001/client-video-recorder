@@ -58,6 +58,7 @@
 			isRecording = true;
 		} catch (err) {
 			console.error('Error accessing media devices.', err);
+			// alert('Error accessing media devices.', err);
 		}
 	};
 
@@ -102,6 +103,7 @@
 				isPreviewing = true;
 			} catch (err) {
 				console.error('Error accessing camera for preview.', err);
+				// alert('Error accessing camera for preview.', err);
 			}
 		}
 	};
