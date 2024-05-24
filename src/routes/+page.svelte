@@ -127,29 +127,43 @@
 			<video class="bg-black" bind:this={videoElement} autoplay muted></video>
 			<div class="flex gap-2">
 				<button
-					class="border border-blue-500 px-2 py-4 max-w-40 rounded-xl"
-					on:click={() => startRecording(false)}>Start Camera Recording</button
+					class="border border-blue-500 px-2 py-4 max-w-40 rounded-xl hover:bg-blue-500/90 hover:text-white disabled:text-gray-500 disabled:bg-slate-200/90 disabled:border-slate-200"
+					on:click={() => startRecording(false)}
+					disabled={isRecording}
 				>
+					Start Camera Recording
+				</button>
 				<button
-					class="border border-blue-500 px-2 py-4 max-w-40 rounded-xl"
-					on:click={() => startRecording(true)}>Start Screen Recording</button
+					class="border border-blue-500 px-2 py-4 max-w-40 rounded-xl hover:bg-blue-500/90 hover:text-white disabled:text-gray-500 disabled:bg-slate-200/90 disabled:border-slate-200"
+					on:click={() => startRecording(true)}
+					disabled={isRecording}
 				>
+					Start Screen Recording
+				</button>
 				<button
-					class="border border-blue-500 px-2 py-4 max-w-40 rounded-xl"
-					on:click={stopRecording}>Stop Recording</button
+					class="border border-blue-500 px-2 py-4 max-w-40 rounded-xl hover:bg-blue-500/90 hover:text-white disabled:text-gray-500 disabled:bg-slate-200/90 disabled:border-slate-200"
+					on:click={stopRecording}
 				>
+					Stop Recording
+				</button>
 				<button
-					class="border border-blue-500 px-2 py-4 max-w-40 rounded-xl"
-					on:click={pauseRecording}>Pause Recording</button
+					class="border border-blue-500 px-2 py-4 max-w-40 rounded-xl hover:bg-blue-500/90 hover:text-white disabled:text-gray-500 disabled:bg-slate-200/90 disabled:border-slate-200"
+					on:click={pauseRecording}
 				>
+					Pause Recording
+				</button>
 				<button
-					class="border border-blue-500 px-2 py-4 max-w-40 rounded-xl"
-					on:click={resumeRecording}>Resume Recording</button
+					class="border border-blue-500 px-2 py-4 max-w-40 rounded-xl hover:bg-blue-500/90 hover:text-white disabled:text-gray-500 disabled:bg-slate-200/90 disabled:border-slate-200"
+					on:click={resumeRecording}
 				>
+					Resume Recording
+				</button>
 				<button
-					class="border border-blue-500 px-2 py-4 max-w-40 rounded-xl"
-					on:click={togglePreview}>{isPreviewing ? 'Stop Preview' : 'Start Preview'}</button
+					class="border border-blue-500 px-2 py-4 max-w-40 rounded-xl hover:bg-blue-500/90 hover:text-white disabled:text-gray-500 disabled:bg-slate-200/90 disabled:border-slate-200"
+					on:click={togglePreview}
 				>
+					{isPreviewing ? 'Stop Preview' : 'Start Preview'}
+				</button>
 			</div>
 		</div>
 		{#if $recordedMedia.length > 0}
@@ -161,8 +175,10 @@
 							{name}
 							<button
 								class="font-medium text-sm hover:text-green-600 text-blue-600"
-								on:click={() => downloadMedia(url, name)}>Download</button
+								on:click={() => downloadMedia(url, name)}
 							>
+								Download
+							</button>
 						</li>
 					{/each}
 				</ul>
